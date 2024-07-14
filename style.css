@@ -11,6 +11,7 @@ body {
   background: #8cc461;
   min-height: 100vh;
   text-transform: uppercase;
+  color: white;
 }
 
 .container {
@@ -162,9 +163,9 @@ body {
 
 .modal {
   position: absolute;
-  height: 50%;
-  width: 500px;
-  bottom: 2rem;
+  height: 60%;
+  width: 450px;
+  bottom: 6rem;
   right: 2rem;
   display: grid;
   place-items: center;
@@ -231,4 +232,93 @@ li::marker {
 .show-modal {
   opacity: 1;
   pointer-events: initial;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  grid-template-areas:
+    'you-title ai-title'
+    'you-picked ai-picked';
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.results__heading {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  padding: 4rem 0 8rem;
+}
+.results__result {
+  min-width: 8rem;
+  min-height: 8rem;
+  background: #004429;
+  border-radius: 50%;
+  transform: scale(1.4);
+  z-index: -1;
+}
+
+.results__heading:first-of-type {
+  grid-area: you-title;
+}
+.results__heading:last-of-type {
+  grid-area: ai-title;
+}
+.results__result:first-of-type {
+  grid-area: you-picked;
+}
+.results__result:last-of-type {
+  grid-area: ai-picked;
+}
+
+.hidden {
+  display: none;
+}
+
+.results.show-winner {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'you-title . ai-title'
+    'you-picked result-winner ai-picked';
+}
+
+.winner .choice::after {
+  box-shadow: 0 0 0 40px #0f5821, 0 0 0 80px #07692c, 0 0 0 130px #036b51;
+  animation: winner 1s ease forwards;
+}
+
+@keyframes winner {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.results__winner {
+  grid-area: result-winner;
+  display: grid;
+  place-items: center;
+}
+.results__text {
+  font-size: 3.5rem;
+  padding-bottom: 1.5rem;
+}
+.play-again {
+  background: #fff;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 0.6rem;
+  color: black;
+  padding: 0.6rem 3.5rem;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.play-again:focus {
+  border: 2px solid black;
 }
