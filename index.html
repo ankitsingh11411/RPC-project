@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROCK PAPER SCISSORS</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app,js" defer></script>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -45,6 +45,37 @@
           </div>
         </button>
       </section>
+    </div>
+
+    <button class="rules-btn" tabindex="1">rules</button>
+    <div class="modal">
+      <div class="modal__container">
+        <div class="modal__header">
+          <h2 class="modal__heading">game rules</h2>
+          <button class="close-btn">
+            <img src="X.png" alt="Close Button" />
+          </button>
+        </div>
+        <div class="modal_rules">
+          <ul style="list-style-type: square">
+            <li>
+              Rock beats scissors, scissors beat paper, and paper beats rock.
+            </li>
+            <li>
+              Agree ahead of time whether you’ll count off “rock, paper,
+              scissors, shoot” or just “rock, paper, scissors.”
+            </li>
+            <li>
+              Use rock, paper, scissors to settle minor decisions or simply play
+              to pass the time
+            </li>
+            <li>
+              If both players lay down the same hand, each player lays down
+              another hand
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

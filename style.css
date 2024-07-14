@@ -112,28 +112,6 @@ body {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  box-shadow: inset 0 0.5rem var(--shadow-light);
-}
-.choice::before,
-.choice::after {
-  content: '';
-  position: absolute;
-  left: -15%;
-  top: -15%;
-  width: 130%;
-  height: 130%;
-  border-radius: 50%;
-  z-index: -1;
-}
-
-.choice::after {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.choice-btn:focus .choice::after {
-  opacity: 1;
-  box-shadow: 0 0 0 2rem #223351;
-  z-index: -2;
 }
 
 .choice img {
@@ -155,4 +133,102 @@ body {
   border: 15px solid #0074b6;
   border-radius: 50%;
   grid-area: rock;
+}
+
+.choice-btn:active {
+  transform: scale(1.5);
+  transition: 0.5s ease-in-out;
+}
+
+.rules-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: none;
+  outline: none;
+  border: 2px solid rgb(219, 219, 219);
+  border-radius: 10px;
+  color: white;
+  padding: 0.6rem 2.5rem;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.rules-btn:focus {
+  border: 2px solid #ffffff;
+}
+
+.modal {
+  position: absolute;
+  height: 50%;
+  width: 500px;
+  bottom: 2rem;
+  right: 2rem;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  border-radius: 10px;
+  border: 10px solid white;
+}
+.modal__container {
+  height: 100%;
+  background: #004429;
+  border-radius: 10px;
+  color: white;
+}
+.modal__header {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+}
+.modal__heading {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-text);
+}
+.close-btn {
+  position: absolute;
+  background: red;
+  height: 5rem;
+  width: 5rem;
+  top: -3em;
+  right: -3em;
+  border: 10px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal_rules {
+  display: flex;
+  height: 70%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 25px;
+  text-transform: initial;
+}
+
+li {
+  padding-bottom: 10px;
+}
+li::marker {
+  color: yellow;
+}
+
+.show-modal {
+  opacity: 1;
+  pointer-events: initial;
 }
